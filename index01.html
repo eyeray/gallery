@@ -44,8 +44,8 @@
         }
         .banner_mask li{
             position: absolute;
-            top:0px;
-            left:600px;
+            top:-400px;
+            left:0;
         }
         .banner_mask li:nth-child(0){
             left:0;
@@ -57,14 +57,15 @@
             float:left;
             position: relative;
             cursor:pointer;
-            left: 250px;
+            left: 265px;
             top:365px;
-            width: 25px;
-            height: 25px;
-            line-height: 25px;
-            border-radius: 3px;
+            width: 10px;
+            height: 10px;
+
+            border-radius: 10px;
+            border:4px solid #fff;
             margin-left: 5px;
-            background: #fff;
+
             text-align: center;
             -webkit-user-select: none;
             z-index:1000;
@@ -77,6 +78,11 @@
         input.banner_input3:checked ~ label.label_btn3,
         input.banner_input4:checked ~ label.label_btn4{
             background: #ff8800;
+            border:4px solid #f00;
+            width:14px;
+            height:14px;
+            top:363px;
+            left:267px;
             color:white;
         }
 
@@ -87,7 +93,8 @@
         input.banner_input4:checked ~ .banner_mask li:nth-child(4){
             animation:none;
             transition: all 0.5s ease-out;
-            left:0;
+            top:0;
+            z-index:999;
 
         }
 
@@ -96,8 +103,8 @@
         }
 
         @keyframes slideOut {
-            0%{left:0;}
-            100%{left:-600px;}
+            0%{top:0;}
+            100%{top:400px;}
 
         }
 
@@ -106,16 +113,16 @@
 <body>
     <section class="container">
         <input type="radio" id="select1" class="banner_input1" name="radio" checked>
-        <label for="select1" class="label_btn1">1</label>
+        <label for="select1" class="label_btn1"></label>
 
         <input type="radio" id="select2" class="banner_input2" name="radio">
-        <label for="select2" class="label_btn2">2</label>
+        <label for="select2" class="label_btn2"></label>
 
         <input type="radio" id="select3" class="banner_input3" name="radio">
-        <label for="select3" class="label_btn3">3</label>
+        <label for="select3" class="label_btn3"></label>
 
         <input type="radio" id="select4" class="banner_input4" name="radio">
-        <label for="select4" class="label_btn4">4</label>
+        <label for="select4" class="label_btn4"></label>
 
         <ul class="banner_mask">
             <li><a href="#"><img src="images/s01.jpg" alt="이미지1"></a></li>
