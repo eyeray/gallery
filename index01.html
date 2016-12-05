@@ -11,29 +11,111 @@
             padding:0;
         }
         img{
+            display: block;
             border:none;
+            -webkit-user-select: none;
+            vertical-align: none;
+
 
         }
         ul{
             list-style: none;
         }
         body{
-            background: #fff;
+            background: #eee;
             font-size:16px;
             font-family: '나눔고딕';
         }
+        .container{
+            position: relative;
+            width:600px;
+            height:400px;
+            top:100px;
+            margin: 0 auto;
+            border:10px solid #fff;
+            box-shadow: 1px 1px 3px rgba(0,0,0,1);
+            cursor: default;
+        }
+        .banner_mask{
+            position: absolute;
+            width:600px;
+            height:400px;
+            overflow: hidden;
+        }
+        .banner_mask li{
+            position: absolute;
+            top:0px;
+            left:600px;
+        }
+        .banner_mask li:nth-child(0){
+            left:0;
+        }
+        input[type="radio"]{
+            display: none;
+        }
+        .container label{
+            float:left;
+            position: relative;
+            cursor:pointer;
+            left: 250px;
+            top:365px;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            border-radius: 3px;
+            margin-left: 5px;
+            background: #fff;
+            text-align: center;
+            -webkit-user-select: none;
+            z-index:1000;
+            transition: all 0.5s ease-out;
+
+        }
+        /*라디오버튼 체크*/
+        input.banner_input1:checked ~ label.label_btn1,
+        input.banner_input2:checked ~ label.label_btn2,
+        input.banner_input3:checked ~ label.label_btn3,
+        input.banner_input4:checked ~ label.label_btn4{
+            background: #ff8800;
+            color:white;
+        }
+
+        /*이미지들의 움직임*/
+        input.banner_input1:checked ~ .banner_mask li:nth-child(1),
+        input.banner_input2:checked ~ .banner_mask li:nth-child(2),
+        input.banner_input3:checked ~ .banner_mask li:nth-child(3),
+        input.banner_input4:checked ~ .banner_mask li:nth-child(4){
+            animation:none;
+            transition: all 0.5s ease-out;
+            left:0;
+
+        }
+
+        input:checked ~ .banner_mask li{
+            animation:slideOut 0.5s ease-out;
+        }
+
+        @keyframes slideOut {
+            0%{left:0;}
+            100%{left:-600px;}
+
+        }
+
     </style>
 </head>
 <body>
     <section class="container">
-        <input type="radio" id="select1" class="banner_input1">
-        <label for="select1">1</label>
-        <input type="radio" id="select2" class="banner_input2">
-        <label for="select2">2</label>
-        <input type="radio" id="select3" class="banner_input3">
-        <label for="select3">3</label>
-        <input type="radio" id="select4" class="banner_input4">
-        <label for="select4">4</label>
+        <input type="radio" id="select1" class="banner_input1" name="radio" checked>
+        <label for="select1" class="label_btn1">1</label>
+
+        <input type="radio" id="select2" class="banner_input2" name="radio">
+        <label for="select2" class="label_btn2">2</label>
+
+        <input type="radio" id="select3" class="banner_input3" name="radio">
+        <label for="select3" class="label_btn3">3</label>
+
+        <input type="radio" id="select4" class="banner_input4" name="radio">
+        <label for="select4" class="label_btn4">4</label>
 
         <ul class="banner_mask">
             <li><a href="#"><img src="images/s01.jpg" alt="이미지1"></a></li>
