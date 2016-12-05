@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gallery</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        img{
+            border:none;
+
+        }
+        ul{
+            list-style: none;
+        }
+        body{
+            background: #fff;
+            font-size:16px;
+            font-family: '나눔고딕';
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <input type="radio" id="select1" class="banner_input1">
+        <label for="select1">1</label>
+        <input type="radio" id="select2" class="banner_input2">
+        <label for="select2">2</label>
+        <input type="radio" id="select3" class="banner_input3">
+        <label for="select3">3</label>
+        <input type="radio" id="select4" class="banner_input4">
+        <label for="select4">4</label>
+
+        <ul class="banner_mask">
+            <li><a href="#"><img src="images/s01.jpg" alt="이미지1"></a></li>
+            <li><a href="#"><img src="images/s02.jpg" alt="이미지2"></a></li>
+            <li><a href="#"><img src="images/s03.jpg" alt="이미지3"></a></li>
+            <li><a href="#"><img src="images/s04.jpg" alt="이미지4"></a></li>
+
+        </ul>
+    </section>
+</body>
+</html>
